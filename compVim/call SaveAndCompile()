@@ -1,0 +1,20 @@
+command! Varisa call Vavava()
+
+function! Vavava ()
+	augroup saveAndCompile
+		autocmd!
+		autocmd BufWrite * w call SaveAndCompile()
+	augroup END
+
+	autocmd saveAndCompile BufWrite * call SaveAndCompile()
+endfunction
+
+
+function! SaveAndCompile ()
+	!g++ -std=c++14 main.cpp 2> dust.txt
+	w! in.txt
+	let size = system("wc -c < dust.txt")
+	if size == 0
+		!./a.out < in.txt > out.txt
+	endif
+endfunction
