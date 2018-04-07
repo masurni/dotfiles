@@ -87,4 +87,7 @@ let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options =' -std=c++14'
 "
 "競プロモード
-command! Comp source ~/.config/nvim/compVim/execute.vim
+command! Comp source $HOME/.config/nvim/compVim/execute.vim
+
+"プラグイン関係の読み込み
+source $HOME/.config/nvim/initPlug.vim
