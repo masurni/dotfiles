@@ -28,5 +28,3 @@ endfunction
 
 syn keyword cConstant INF MOD EPS
 syn keyword	cRepeat		rep range
-
-			" -command g++
