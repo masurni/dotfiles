@@ -16,8 +16,8 @@ set smartindent
 set showmatch
 set whichwrap=b,s,h,l,<,>,[,]
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set ambiwidth=double
 
 set scrolloff=15
