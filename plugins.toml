@@ -3,9 +3,12 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'jpo/vim-railscasts-theme'
+
+[[plugins]]
+repo = 'tomasr/molokai'
 hook_add = '''
-  syntax on
-  colorscheme railscasts
+  colorscheme molokai
+  set t_Co=256
 '''
 
 [[plugins]]
@@ -31,7 +34,7 @@ hook_add = '''
   let g:airline#extensions#tabline#buffer_idx_mode = 1
   let g:airline#extensions#whitespace#mixed_indent_algo = 1
   let g:airline_section_warning = '%{airline#extensions#ale#get_warning()} %{airline#extensions#ale#get_error()}'
-  let g:airline_theme = 'distinguished'
+  let g:airline_theme = 'molokai'
   if !exists('g:airline_symbols')
       let g:airline_symbols = {}
   endif
