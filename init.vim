@@ -36,11 +36,11 @@ nnoremap <Up>   gk
 source $XDG_CONFIG_HOME/nvim/initPlug.vim
 
 "vimの背景を端末の背景と同じにする
-highlight Normal ctermbg=NONE
-highlight NonText ctermbg=NONE
-highlight LineNr ctermbg=NONE
-highlight Folded ctermbg=NONE
-highlight EndOfBuffer ctermbg=NONE
+"highlight Normal ctermbg=NONE
+"highlight NonText ctermbg=NONE
+"highlight LineNr ctermbg=NONE
+"highlight Folded ctermbg=NONE
+"highlight EndOfBuffer ctermbg=NONE
 
 "CompProMode
 if isdirectory(expand('/home/masumi/compProVim'))
