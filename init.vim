@@ -43,6 +43,6 @@ highlight Folded ctermbg=NONE
 highlight EndOfBuffer ctermbg=NONE
 
 "CompProMode
-if isdirectory(expand('$HOME/compProVim'))
-    command! Comp source /home/masumi/compProVim/execute.vim
+if isdirectory(expand('/home/masumi/compProVim'))
+	command! Comp source /home/masumi/compProVim/execute.vim
 endif

@@ -39,4 +39,10 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'w0rp/ale'
-on_ft = ['c', 'cpp', 'python']
+on_ft = ['c', 'cpp', 'python', 'java']
+hook_source = '''
+  let g:ale_linters = {
+      \ 'cpp' : ['gcc'],
+      \ 'python' : ['flake8'],
+      \}
+'''
