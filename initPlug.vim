@@ -27,5 +27,3 @@ syntax enable
 if dein#check_install()
 	call dein#install()
 endif
-
-nnoremap <C-]> g<C-]>

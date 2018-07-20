@@ -1,8 +1,9 @@
 #!/bin/sh
 if ! grep XDG_CONFIG_HOME $HOME/.bashrc > /dev/null; then
 	echo "export XDG_CONFIG_HOME=$HOME/.config" >> $HOME/.bashrc
-	. $HOME/.bashrc
+    exec bash
 fi
+
 ln -sf ${PWD}/init.vim     $XDG_CONFIG_HOME/nvim/init.vim
 ln -sf ${PWD}/initPlug.vim $XDG_CONFIG_HOME/nvim/initPlug.vim
 ln -sf ${PWD}/plugins.toml $XDG_CONFIG_HOME/nvim/plugins.toml
