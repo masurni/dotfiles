@@ -2,10 +2,10 @@
 
 ubuntu16.04で使用しています。
 
-cquery(https://github.com/cquery-project/cquery/wiki/Getting-started)が必要です。
+cquery[https://github.com/cquery-project/cquery/wiki/Getting-started](https://github.com/cquery-project/cquery/wiki/Getting-started)が必要です。
 
-私の環境では(https://github.com/cquery-project/cquery/issues/734)←と一緒のエラーが出ました。
+私の環境では[https://github.com/cquery-project/cquery/issues/734](https://github.com/cquery-project/cquery/issues/734)←と一緒のエラーが出ました。
 ここに書いてある通り、Cmakeを使うとうまくいきました。
 
 クローンしてきたcqueryフォルダにbuildフォルダを作り、
-それからは(https://github.com/cquery-project/cquery/wiki/Build-%28CMake%29)ここの手順通りに進めていけば問題無いかと思います。
+それからは[https://github.com/cquery-project/cquery/wiki/Build-%28CMake%29](https://github.com/cquery-project/cquery/wiki/Build-%28CMake%29)ここの手順通りに進めていけば問題無いかと思います。
