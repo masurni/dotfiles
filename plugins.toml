@@ -33,7 +33,7 @@ hook_add = '''
   let g:airline#extensions#tabline#buffer_idx_mode = 1
   let g:airline#extensions#whitespace#mixed_indent_algo = 1
   let g:airline_section_warning = '%{airline#extensions#ale#get_warning()} %{airline#extensions#ale#get_error()}'
-  let g:airline_theme = 'molokai'
+  let g:airline_theme = 'wombat'
   if !exists('g:airline_symbols')
       let g:airline_symbols = {}
   endif
@@ -108,6 +108,21 @@ noremap <f2> :LspRename<cr>
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
+hook_add = '''
+let g:asyncomplete_remove_duplicates = 1
+let g:asyncomplete_auto_popup = 0
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <C-n>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ asyncomplete#force_refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+'''
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
