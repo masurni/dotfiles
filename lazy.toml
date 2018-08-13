@@ -1,2 +1,10 @@
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'pdavydov108/vim-lsp-cquery'
+on_ft = ['c', 'cpp', 'objc', 'objcpp', 'cc']
+
+[[plugins]]
+repo = 'ryanolsonx/vim-lsp-python''
+on_ft = ['python']
