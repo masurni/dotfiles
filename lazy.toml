@@ -2,6 +2,28 @@
 repo = 'thinca/vim-quickrun'
 
 [[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+on_ft = ['c', 'cpp', 'objc', 'objcpp', 'cc', 'python']
+hook_post_source = '''
+    let g:asyncomplete_remove_duplicates = 1
+
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+
+    inoremap <silent><expr> <C-n>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ asyncomplete#force_refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+on_source = ['asyncomplete.vim']
+
+[[plugins]]
 repo = 'pdavydov108/vim-lsp-cquery'
 on_ft = ['c', 'cpp', 'objc', 'objcpp', 'cc']
 

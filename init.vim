@@ -41,3 +41,7 @@ source $XDG_CONFIG_HOME/nvim/initPlug.vim
 "highlight LineNr ctermbg=NONE
 "highlight Folded ctermbg=NONE
 "highlight EndOfBuffer ctermbg=NONE
+"CompProMode
+if isdirectory(expand('/home/masumi/compProVim'))
+    command! Comp source /home/masumi/compProVim/execute.vim
+endif
