@@ -30,3 +30,17 @@ on_ft = ['c', 'cpp', 'objc', 'objcpp', 'cc']
 [[plugins]]
 repo = 'ryanolsonx/vim-lsp-python''
 on_ft = ['python']
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
+on_source = ['asyncomplete.vim']
+hook_post_source = '''
+    call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+        \ 'name': 'neosnippet',
+        \ 'whitelist': ['*'],
+        \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+        \ }))
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
+'''
