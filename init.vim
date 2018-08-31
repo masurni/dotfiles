@@ -16,7 +16,8 @@ set tabstop=4
 set shiftwidth=4
 set ambiwidth=single
 
-set scrolloff=15
+set scrolloff=999
+set sidescrolloff=999
 
 set mouse=a
 
