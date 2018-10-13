@@ -16,13 +16,14 @@ set tabstop=4
 set shiftwidth=4
 set ambiwidth=single
 
+set nowrap
 set scrolloff=999
 set sidescrolloff=999
 
 set mouse=a
 
 "保存時に行末の空白を除去する
-autocmd BufWritePre * :%s/\s\+$//ge
+"autocmd BufWritePre * :%s/\s\+$//ge
 
 "ターミナルモードを <C-[> で抜けられるようにする
 tnoremap <ESC> <C-\><C-n>
