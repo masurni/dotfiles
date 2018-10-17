@@ -47,3 +47,7 @@ source $XDG_CONFIG_HOME/nvim/initPlug.vim
 if isdirectory(expand('/home/masumi/compProVim'))
     command! Comp source /home/masumi/compProVim/execute.vim
 endif
+
+if filereadable('.config.vim')
+    source .config.vim
+endif
