@@ -23,7 +23,10 @@ set sidescrolloff=999
 set mouse=a
 
 "保存時に行末の空白を除去する
-"autocmd BufWritePre * :%s/\s\+$//ge
+augroup EraseSpaceAtEndOfLine
+autocmd!
+autocmd BufWritePre * if &ft != "markdown"|:%s/\s\+$//ge|endif
+augroup END
 
 "ターミナルモードを <C-[> で抜けられるようにする
 tnoremap <ESC> <C-\><C-n>
