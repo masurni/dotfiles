@@ -2,6 +2,26 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
 repo = 'jpo/vim-railscasts-theme'
 hook_add = '''
     colorscheme railscasts
@@ -111,5 +131,3 @@ hook_add = '''
     noremap <silent><C-]> :LspDefinition<cr>
     noremap <f2>          :LspRename<cr>
 '''
-
-

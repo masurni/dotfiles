@@ -15,28 +15,11 @@ repo = 'ryanolsonx/vim-lsp-python'
 on_ft = ['python']
 
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
-on_ft = ['c', 'cpp', 'objc', 'objcpp', 'cc', 'python']
-hook_source = '''
-    let g:asyncomplete_remove_duplicates = 1
-    let g:asyncomplete_completion_delay = 10
-
-    function! s:check_back_space() abort
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction
-
-    inoremap <silent><expr> <C-n>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ asyncomplete#force_refresh()
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-'''
+repo = 'lighttiger2505/deoplete-vim-lsp'
+on_source = ['vim-lsp-cquery', 'vim-lsp-python']
 
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
-on_source = ['asyncomplete.vim']
-
+repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'roxma/nvim-completion-manager'
@@ -49,37 +32,3 @@ on_ft = ['r']
 [[plugins]]
 repo = 'gaalcaras/ncm-R'
 on_ft = ['r']
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_ft = ['neosnippet', 'markdown']
-hook_source = '''
-    let g:deoplete#enable_at_startup = 1
-'''
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-on_source = ['deoplete.nvim', 'asyncomplete.vim']
-hook_source = '''
-    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k>     <Plug>(neosnippet_expand_target)
-'''
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-on_source = ['neosnippet.vim']
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
-on_source = ['asyncomplete.vim']
-hook_post_source = '''
-    call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
-        \ 'name': 'neosnippet',
-        \ 'whitelist': ['*'],
-        \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
-        \ }))
-'''
-
-[[plugins]]
-repo = 'thinca/vim-quickrun'

@@ -22,10 +22,12 @@ set sidescrolloff=999
 
 set mouse=a
 
+let g:tex_fast=""
+
 "保存時に行末の空白を除去する
 augroup EraseSpaceAtEndOfLine
 autocmd!
-autocmd BufWritePre * if &ft != "markdown"|:%s/\s\+$//ge|endif
+autocmd BufWritePre * if &ft != "markdown" && &ft != "tex"|:%s/\s\+$//ge|endif
 augroup END
 
 "ターミナルモードを <C-[> で抜けられるようにする
@@ -46,6 +48,7 @@ source $XDG_CONFIG_HOME/nvim/initPlug.vim
 "highlight LineNr ctermbg=NONE
 "highlight Folded ctermbg=NONE
 "highlight EndOfBuffer ctermbg=NONE
+
 "CompProMode
 if isdirectory(expand('/home/masumi/compProVim'))
     command! Comp source /home/masumi/compProVim/execute.vim
