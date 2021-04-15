@@ -57,3 +57,5 @@ endif
 if filereadable('.config.vim')
     source .config.vim
 endif
+
+let g:python3_host_prog = expand('/usr/bin/python3.6')
